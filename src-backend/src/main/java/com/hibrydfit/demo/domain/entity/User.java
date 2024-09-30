@@ -1,7 +1,6 @@
 package com.hibrydfit.demo.domain.entity;
 
 import java.util.List;
-import java.util.Set;
 
 import com.hibrydfit.demo.domain.model.CardioType;
 
@@ -9,6 +8,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -33,5 +33,19 @@ public class User {
     private Integer fire;
     private CardioType cardioFav;
     
+    @OneToMany(mappedBy = "seguidor")
+    private List<Seguimiento> seguimientosHechos;
+
+    @OneToMany(mappedBy = "seguido")
+    private List<Seguimiento> seguidores;
+
+    @OneToMany(mappedBy = "user")
+    private List<Entrenamiento> publicaciones;
+
+    @OneToMany(mappedBy = "user")
+    private List<Like> likes;
+
+    @OneToMany(mappedBy = "user")
+    private List<Comentario> comentarios;
     
 }

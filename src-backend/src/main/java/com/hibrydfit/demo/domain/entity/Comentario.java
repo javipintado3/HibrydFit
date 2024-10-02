@@ -24,8 +24,9 @@ public class Comentario {
     private Long id;
     private String contenido;
     @ManyToOne
-    @JoinColumn(name = "usuario_id")
-    private User usuario;
+    @JoinColumn(name = "user_id")
+    private User user;
+
     @ManyToOne
     @JoinColumn(name = "entrenamiento_id")
     private Entrenamiento entrenamiento;

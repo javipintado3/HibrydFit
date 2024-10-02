@@ -34,5 +34,5 @@ public class Entrenamiento {
     
     @ManyToOne
     @JoinColumn(name = "usuario_id")
-    private User usuario;
+    private User user;
 }
